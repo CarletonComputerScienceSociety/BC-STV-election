@@ -1,0 +1,251 @@
+<!doctype html>
+<head>
+<title>CCSS First-Year Representative Election 2013</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="jquery-1.9.1.min.js"></script>
+<script src="ballot.js"></script>
+</head>
+
+<div>
+<h1>CCSS First-Year Representative Election 2013</h1>
+
+<form method="POST" action="vote">
+<input type="hidden" name="x" value="{x}">
+<input type="hidden" name="usid" value="{usid}">
+
+<h2>Directions</h2>
+<ul>
+<li>Rank candidates in the order you prefer them, starting with 1.
+<li>Leave candidates you don't support unranked. (To decline the ballot, leave
+all candidates unranked.)
+<li>Votes will be counted according to <a
+href="http://en.wikipedia.org/wiki/BC-STV">BC-STV</a>. (Therefore it is
+recommended that you rank all
+the candidates you support; your vote can be split among several of them.)
+</ul>
+
+<h2>Ballot: First-Year Representatives</h2>
+<ul id="rankings">
+<!--
+for id, name in [("RB","Rebecca Bartoszewica"),
+                 ("KB","Kyle Bjornson"),
+                 ("JB","Jason Bromfield"),
+                 ("EC","Eugene Castro"),
+                 ("YC","Yike Chen"),
+                 ("AC","Alyssa Corcino"),
+                 ("WC","Warren Currie"),
+                 ("AD","Akhil Dalal"),
+                 ("SF","Sahel Farah"),
+                 ("LF","Lucas Fiorella"),
+                 ("SG","Sean Ghazazani"),
+                 ("CH","Connor Hicks"),
+                 ("DK","Destiny Kassa"),
+                 ("FK","Farhan Khan"),
+                 ("AM","Austin Mitchell"),
+                 ("PY","Paul Yammine")]:
+    print(
+"""<li><select name="{id}" id="{id}">
+    <option value="0" selected>(unranked)</option>
+    <option value="1">1</option><option value="2">2</option>
+    <option value="3">3</option><option value="4">4</option>
+    <option value="5">5</option><option value="6">6</option>
+    <option value="7">7</option><option value="8">8</option>
+    <option value="9">9</option><option value="10">10</option>
+    <option value="11">11</option><option value="12">12</option>
+    <option value="13">13</option><option value="14">14</option>
+    <option value="15">15</option><option value="16">16</option>
+</select><label for="{id}">{name}</label></li>""".format(id=id, name=name))
+-->
+<li><select name="RB" id="RB">
+    <option value="0" selected>(unranked)</option>
+    <option value="1">1</option><option value="2">2</option>
+    <option value="3">3</option><option value="4">4</option>
+    <option value="5">5</option><option value="6">6</option>
+    <option value="7">7</option><option value="8">8</option>
+    <option value="9">9</option><option value="10">10</option>
+    <option value="11">11</option><option value="12">12</option>
+    <option value="13">13</option><option value="14">14</option>
+    <option value="15">15</option><option value="16">16</option>
+</select><label for="RB">Rebecca Bartoszewica</label></li>
+<li><select name="KB" id="KB">
+    <option value="0" selected>(unranked)</option>
+    <option value="1">1</option><option value="2">2</option>
+    <option value="3">3</option><option value="4">4</option>
+    <option value="5">5</option><option value="6">6</option>
+    <option value="7">7</option><option value="8">8</option>
+    <option value="9">9</option><option value="10">10</option>
+    <option value="11">11</option><option value="12">12</option>
+    <option value="13">13</option><option value="14">14</option>
+    <option value="15">15</option><option value="16">16</option>
+</select><label for="KB">Kyle Bjornson</label></li>
+<li><select name="JB" id="JB">
+    <option value="0" selected>(unranked)</option>
+    <option value="1">1</option><option value="2">2</option>
+    <option value="3">3</option><option value="4">4</option>
+    <option value="5">5</option><option value="6">6</option>
+    <option value="7">7</option><option value="8">8</option>
+    <option value="9">9</option><option value="10">10</option>
+    <option value="11">11</option><option value="12">12</option>
+    <option value="13">13</option><option value="14">14</option>
+    <option value="15">15</option><option value="16">16</option>
+</select><label for="JB">Jason Bromfield</label></li>
+<li><select name="EC" id="EC">
+    <option value="0" selected>(unranked)</option>
+    <option value="1">1</option><option value="2">2</option>
+    <option value="3">3</option><option value="4">4</option>
+    <option value="5">5</option><option value="6">6</option>
+    <option value="7">7</option><option value="8">8</option>
+    <option value="9">9</option><option value="10">10</option>
+    <option value="11">11</option><option value="12">12</option>
+    <option value="13">13</option><option value="14">14</option>
+    <option value="15">15</option><option value="16">16</option>
+</select><label for="EC">Eugene Castro</label></li>
+<li><select name="YC" id="YC">
+    <option value="0" selected>(unranked)</option>
+    <option value="1">1</option><option value="2">2</option>
+    <option value="3">3</option><option value="4">4</option>
+    <option value="5">5</option><option value="6">6</option>
+    <option value="7">7</option><option value="8">8</option>
+    <option value="9">9</option><option value="10">10</option>
+    <option value="11">11</option><option value="12">12</option>
+    <option value="13">13</option><option value="14">14</option>
+    <option value="15">15</option><option value="16">16</option>
+</select><label for="YC">Yike Chen</label></li>
+<li><select name="AC" id="AC">
+    <option value="0" selected>(unranked)</option>
+    <option value="1">1</option><option value="2">2</option>
+    <option value="3">3</option><option value="4">4</option>
+    <option value="5">5</option><option value="6">6</option>
+    <option value="7">7</option><option value="8">8</option>
+    <option value="9">9</option><option value="10">10</option>
+    <option value="11">11</option><option value="12">12</option>
+    <option value="13">13</option><option value="14">14</option>
+    <option value="15">15</option><option value="16">16</option>
+</select><label for="AC">Alyssa Corcino</label></li>
+<li><select name="WC" id="WC">
+    <option value="0" selected>(unranked)</option>
+    <option value="1">1</option><option value="2">2</option>
+    <option value="3">3</option><option value="4">4</option>
+    <option value="5">5</option><option value="6">6</option>
+    <option value="7">7</option><option value="8">8</option>
+    <option value="9">9</option><option value="10">10</option>
+    <option value="11">11</option><option value="12">12</option>
+    <option value="13">13</option><option value="14">14</option>
+    <option value="15">15</option><option value="16">16</option>
+</select><label for="WC">Warren Currie</label></li>
+<li><select name="AD" id="AD">
+    <option value="0" selected>(unranked)</option>
+    <option value="1">1</option><option value="2">2</option>
+    <option value="3">3</option><option value="4">4</option>
+    <option value="5">5</option><option value="6">6</option>
+    <option value="7">7</option><option value="8">8</option>
+    <option value="9">9</option><option value="10">10</option>
+    <option value="11">11</option><option value="12">12</option>
+    <option value="13">13</option><option value="14">14</option>
+    <option value="15">15</option><option value="16">16</option>
+</select><label for="AD">Akhil Dalal</label></li>
+<li><select name="SF" id="SF">
+    <option value="0" selected>(unranked)</option>
+    <option value="1">1</option><option value="2">2</option>
+    <option value="3">3</option><option value="4">4</option>
+    <option value="5">5</option><option value="6">6</option>
+    <option value="7">7</option><option value="8">8</option>
+    <option value="9">9</option><option value="10">10</option>
+    <option value="11">11</option><option value="12">12</option>
+    <option value="13">13</option><option value="14">14</option>
+    <option value="15">15</option><option value="16">16</option>
+</select><label for="SF">Sahel Farah</label></li>
+<li><select name="LF" id="LF">
+    <option value="0" selected>(unranked)</option>
+    <option value="1">1</option><option value="2">2</option>
+    <option value="3">3</option><option value="4">4</option>
+    <option value="5">5</option><option value="6">6</option>
+    <option value="7">7</option><option value="8">8</option>
+    <option value="9">9</option><option value="10">10</option>
+    <option value="11">11</option><option value="12">12</option>
+    <option value="13">13</option><option value="14">14</option>
+    <option value="15">15</option><option value="16">16</option>
+</select><label for="LF">Lucas Fiorella</label></li>
+<li><select name="SG" id="SG">
+    <option value="0" selected>(unranked)</option>
+    <option value="1">1</option><option value="2">2</option>
+    <option value="3">3</option><option value="4">4</option>
+    <option value="5">5</option><option value="6">6</option>
+    <option value="7">7</option><option value="8">8</option>
+    <option value="9">9</option><option value="10">10</option>
+    <option value="11">11</option><option value="12">12</option>
+    <option value="13">13</option><option value="14">14</option>
+    <option value="15">15</option><option value="16">16</option>
+</select><label for="SG">Sean Ghazazani</label></li>
+<li><select name="CH" id="CH">
+    <option value="0" selected>(unranked)</option>
+    <option value="1">1</option><option value="2">2</option>
+    <option value="3">3</option><option value="4">4</option>
+    <option value="5">5</option><option value="6">6</option>
+    <option value="7">7</option><option value="8">8</option>
+    <option value="9">9</option><option value="10">10</option>
+    <option value="11">11</option><option value="12">12</option>
+    <option value="13">13</option><option value="14">14</option>
+    <option value="15">15</option><option value="16">16</option>
+</select><label for="CH">Connor Hicks</label></li>
+<li><select name="DK" id="DK">
+    <option value="0" selected>(unranked)</option>
+    <option value="1">1</option><option value="2">2</option>
+    <option value="3">3</option><option value="4">4</option>
+    <option value="5">5</option><option value="6">6</option>
+    <option value="7">7</option><option value="8">8</option>
+    <option value="9">9</option><option value="10">10</option>
+    <option value="11">11</option><option value="12">12</option>
+    <option value="13">13</option><option value="14">14</option>
+    <option value="15">15</option><option value="16">16</option>
+</select><label for="DK">Destiny Kassa</label></li>
+<li><select name="FK" id="FK">
+    <option value="0" selected>(unranked)</option>
+    <option value="1">1</option><option value="2">2</option>
+    <option value="3">3</option><option value="4">4</option>
+    <option value="5">5</option><option value="6">6</option>
+    <option value="7">7</option><option value="8">8</option>
+    <option value="9">9</option><option value="10">10</option>
+    <option value="11">11</option><option value="12">12</option>
+    <option value="13">13</option><option value="14">14</option>
+    <option value="15">15</option><option value="16">16</option>
+</select><label for="FK">Farhan Khan</label></li>
+<li><select name="AM" id="AM">
+    <option value="0" selected>(unranked)</option>
+    <option value="1">1</option><option value="2">2</option>
+    <option value="3">3</option><option value="4">4</option>
+    <option value="5">5</option><option value="6">6</option>
+    <option value="7">7</option><option value="8">8</option>
+    <option value="9">9</option><option value="10">10</option>
+    <option value="11">11</option><option value="12">12</option>
+    <option value="13">13</option><option value="14">14</option>
+    <option value="15">15</option><option value="16">16</option>
+</select><label for="AM">Austin Mitchell</label></li>
+<li><select name="PY" id="PY">
+    <option value="0" selected>(unranked)</option>
+    <option value="1">1</option><option value="2">2</option>
+    <option value="3">3</option><option value="4">4</option>
+    <option value="5">5</option><option value="6">6</option>
+    <option value="7">7</option><option value="8">8</option>
+    <option value="9">9</option><option value="10">10</option>
+    <option value="11">11</option><option value="12">12</option>
+    <option value="13">13</option><option value="14">14</option>
+    <option value="15">15</option><option value="16">16</option>
+</select><label for="PY">Paul Yammine</label></li>
+</ul>
+
+<h2>Confirm your ballot</h2>
+<p>(This section will be updated as you choose options above.)</p>
+<p id="directors-status">The JavaScript to check your ballot hasn't loaded yet.
+Your rankings must start from 1, and be consecutive with no two candidates
+having the same rank.
+</p>
+
+<button>Vote</button>
+
+</form>
+
+<div style='margin-bottom: 20%'>
+<!-- Space to avoid scrolling up when the confirmation section gets short -->
+</div>
+</div>
